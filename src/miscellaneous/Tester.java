@@ -13,7 +13,10 @@ public class Tester {
         list.printList();
         System.out.println("\n"+list.size());
         System.out.println(list.contains(15));
-        list.delete(20);
+       // list.delete(20);
+        list.printList();
+        System.out.println();
+        list.reverse();
         list.printList();
         
     }

@@ -107,6 +107,41 @@ public class LinkedListImpl {
         head = null;
     }
 
+    public void reverse(){
+
+    // 'previous' represents the node that should come BEFORE the current node
+    // during reversal. Initially there is no previous node, so it starts as null.
+    Node previous = null;
+
+    // Start traversing from the head (the first node of the list).
+    Node current = head;
+
+    // Keep processing nodes until we move past the last node.
+    while(current != null){
+
+        // IMPORTANT: Save the next node BEFORE changing any links.
+        // Without this temporary variable, the rest of the list would be lost.
+        Node next = current.next;
+
+        // Reverse the direction of the current node's pointer.
+        // Instead of pointing forward, it now points to the previous node.
+        current.next = previous;
+
+        // Move the 'previous' pointer one step forward.
+        // The current node has now become the beginning of the reversed part.
+        previous = current;
+
+        // Move to the next node in the ORIGINAL list
+        // (which we safely saved before reversing the link).
+        current = next;
+    }
+
+    // When the loop finishes, 'previous' is pointing to the last node
+    // of the original list, which is now the first node of the reversed list.
+    // Update head so the list starts from the new first node.
+    head = previous;
+}
+
 
    // Inner class representing a single box in the list chain.
    private static class Node {

@@ -55,7 +55,29 @@ Need a collection back?
     ├── groupingBy()   → many groups
     └── partitioningBy() → two groups
 
-    
+
+
+Collectors
+│
+├── INTO COLLECTIONS
+│       toList(), toSet(), toUnmodifiableList(),
+│       toUnmodifiableSet(), toCollection()
+│
+├── INTO MAP
+│       toMap(), toUnmodifiableMap(),
+│       groupingBy(), partitioningBy()
+│
+├── COUNTING & MATH
+│       counting(), summingInt/Long/Double(),
+│       averagingInt/Long/Double(),
+│       summarizingInt/Long/Double()
+│
+├── STRING
+│       joining()
+│
+└── ADVANCED
+        mapping(), filtering(), flatMapping(),
+        collectingAndThen(), teeing()
 Questions:
 where intermediate operations store results or what is the flow of the streams
 
